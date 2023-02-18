@@ -1,0 +1,26 @@
+<h1 style="text-align:center">Face Recognition </h1>
+<hr/>
+<form method="POST">
+    {% csrf_token %}
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+    
+    <tr>
+        <td>
+            Password
+        </td>
+        <td><input type="button" placeholder="Click Here to vote" name="Pwd" required></inp
+            
+            ut></td>
+    </tr>
+        <td></td>
+        <td><button type="submit">Login</button></td>
+</table>
+{%if messages%}
+{% for msg in messages%}
+<b>{{msg}}</b>
+
+{% endfor%}
+{% endif %}
+<em> <a href="{% url 'index' %}" >Home</a></em>
+</form>

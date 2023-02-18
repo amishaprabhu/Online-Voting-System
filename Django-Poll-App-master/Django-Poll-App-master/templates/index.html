@@ -1,0 +1,31 @@
+
+<h1 > Online Voting System </h1>
+<hr/>
+{% if request.session.Email %}
+{{request.session.Email}} &nbsp;&nbsp; <a href="{% url 'Logout' %}">Logout</a>
+{% else %}
+<b>
+    <table  style= "margin-left:auto; margin-right:auto;">
+    <tr>
+        <td><button >
+            <a href="{%url 'Reg' %}">Registration for Voters</a>
+        </button></td>
+    </tr>
+    <tr>
+        <td><button >
+            <a href="{% url 'res' %}">Registration for Party</a>
+        </button></td>
+    </tr>
+    <tr>
+        <td><button style="position: relative; left: 30%;" >
+            <a href="{% url 'Loginpage' %}">Login</a>
+        </button></td>
+    </tr>
+    <tr>
+        <td><button style="position: relative; left: 17%;" >
+            <a href="{% url 'Adminlogin' %}">Admin Login</a>
+        </button></td>
+    </tr>     
+</b>
+</table>
+{% endif %}

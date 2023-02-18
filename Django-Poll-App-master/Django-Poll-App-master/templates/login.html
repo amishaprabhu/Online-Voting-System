@@ -1,0 +1,35 @@
+<h1 style="text-align:center">LOGIN PAGE</h1>
+<hr/>
+<form method="POST">
+    {% csrf_token %}
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+    <tr>
+        <td>
+            User Name
+        </td>
+        <td><input type="text" placeholder="Enter email as username " name="Email" required></input></td>
+    </tr>
+    <tr>
+        <td>
+            Voter id
+        </td>
+        <td><input type="text" placeholder="Enter Voterid " name="Voterid" required></input></td>
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>
+        <td><input type="password" placeholder="Enter password  " name="Pwd" required></input></td>
+    </tr>
+        <td></td>
+        <td><button type="submit">Login</button></td>
+</table>
+{%if messages%}
+{% for msg in messages%}
+<b>{{msg}}</b>
+
+{% endfor%}
+{% endif %}
+<em> <a href="{% url 'index' %}" >Home</a></em>
+</form>

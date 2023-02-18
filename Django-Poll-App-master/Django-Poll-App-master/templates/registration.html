@@ -1,0 +1,60 @@
+{% load static %}
+
+<body background="static/img/vote.jpg">
+
+<h1 style="text-align: 50%">New Voter Registration</h1>
+
+<form method="POST">
+    {%csrf_token %}
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+    <tr>
+        <td>Voter Id</td>
+        <td><input type= "text" placeholder="Enter voter id" name="Voterid"  required></td>
+    </tr>
+    <tr>
+        <td>User Name</td>
+        <td><input type= "text" placeholder="Enter Username" name="Username"  required></td>
+    </tr>
+   
+    <tr>
+        <td>Address</td>
+        <td><input type= "text" placeholder="Enter Address" name="Address"  required></td>
+    </tr>
+    <tr>
+        <td>DOB</td>
+        <td><input type= "date" placeholder="Enter DOB" name="DOB"  required></td>
+    </tr>
+    
+    <tr>
+        <td>Email</td>
+        <td><input type= "Email" placeholder="Enter Email" name="Email" required></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type= "password" placeholder="Enter password" name="Pwd"  required></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type= "text" placeholder="Enter Age" name="Age" required></td>
+    </tr>
+    <tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type= "text" placeholder="Enter Gender" name="Gender"  required></td>
+    </tr>
+        <td></td>
+        <td><button type="submit" >Registration</button></td>
+    </tr>
+    
+
+</table>
+{%if messages%}
+{% for msg in messages%}
+<b>{{msg}}</b>
+
+{% endfor%}
+{% endif %}
+.3
+<em>If You Already Registered <a href="{% url 'Loginpage' %}" >Login</a></em>
+</form>
